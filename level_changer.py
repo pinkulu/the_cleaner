@@ -27,7 +27,6 @@ def read_save():
 def get_level():
     data = read_save()
     position = data["data"]["position"]
-    print(position)
 
     closest_level = None
     min_distance = float('inf')
@@ -48,7 +47,6 @@ def set_level(lvl):
         data = f.read()
         data = data.decode("utf-8")
         data = json.loads(data)
-    print(data)
     position = data["data"]["position"]
 
     if lvl in levels:
@@ -74,21 +72,7 @@ root.geometry("300x300")
 lvl_label = tk.Label(root, text="Level: " + str(get_level()))
 lvl_label.pack()
 
+for i in range(1, len(levels) + 1):
+    tk.Button(root, text="Level " + str(i), command=lambda i=i: set_level(i)).pack()
 
-
-# add a button to the root window
-lvl1btn = tk.Button(root, text="Level 1", command=lambda: set_level(1))
-lvl1btn.pack()
-lvl2btn = tk.Button(root, text="Level 2", command=lambda: set_level(2))
-lvl2btn.pack()
-lvl3btn = tk.Button(root, text="Level 3", command=lambda: set_level(3))
-lvl3btn.pack()
-lvl4btn = tk.Button(root, text="Level 4", command=lambda: set_level(4))
-lvl4btn.pack()
-lvl5btn = tk.Button(root, text="Level 5", command=lambda: set_level(5))
-lvl5btn.pack()
-lvl6btn = tk.Button(root, text="Level 6", command=lambda: set_level(6))
-lvl6btn.pack()
-lvl7btn = tk.Button(root, text="Level 7", command=lambda: set_level(7))
-lvl7btn.pack()
 root.mainloop()
