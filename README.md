@@ -12,3 +12,5 @@ how to run:
 - download the code
 - open the console in the same dirrectory as where the file is
 - run `python ./level_changer.py` or `python3 ./level_changer.py`(whicever one works)
+
+**USE AT YOUR OWN RISK**
